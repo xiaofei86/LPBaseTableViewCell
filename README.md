@@ -25,7 +25,7 @@
 	
 [图片备用链接](http://c.picphotos.baidu.com/album/s%3D680%3Bq%3D90/sign=d9f52361cd8065387feaa71ba7e6d079/d50735fae6cd7b89d4b79cac082442a7d8330ec1.jpg)
 
-<img src = "https://github.com/xiaofei86/LPBaseTableViewCell/raw/master/Images/1.png" width = 373>
+<img src = "https://github.com/xiaofei86/LPBaseTableViewCell/raw/master/Images/2.png" width = 373>
 
 #OneLine
 
