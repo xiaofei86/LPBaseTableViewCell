@@ -7,7 +7,7 @@
 //
 
 #import "LPBaseTableViewCell.h"
-#import "Masonry.h"
+#import <Masonry.h>
 
 static const CGFloat defaultHeight = 0.5;
 
