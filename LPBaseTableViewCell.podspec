@@ -10,5 +10,6 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/xiaofei86/LPBaseTableViewCell.git", :tag => s.version }
   s.source_files  = "LPBaseTableViewCell/*.{h,m}"
+  s.dependency "Masonry", "0.6.4"
 
 end
