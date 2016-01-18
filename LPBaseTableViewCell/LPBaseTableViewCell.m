@@ -35,6 +35,8 @@ typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        [self setupViews];
+        [self setupConstraints];
         _separatorLineStyle = SeparatorLineStyleNone;
         _topSeparatorLineHeight = defaultHeight;
         _bottomSeparatorLineHeight = defaultHeight;
@@ -52,14 +54,31 @@ typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
         _bottomSeparatorLine = [[UIImageView alloc] initWithFrame:CGRectZero];
         _bottomSeparatorLine.image = [LPBaseTableViewCell imageWithColor:_bottomSeparatorLineColor];
         [self addSubview:_bottomSeparatorLine];
-        
-        [self setNeedsUpdateConstraints];
     }
     return self;
 }
 
-- (void)updateConstraints {
+- (void)setupViews {
+    self.contentView.backgroundColor = [UIColor whiteColor];
+    self.opaque = YES;
+}
+
+- (void)setupConstraints {
     
+}
+
++ (NSString *)cellReuseIdentifier {
+    return NSStringFromClass([self class]);
+}
+
+- (void)redraw {
+    [self.contentView setNeedsUpdateConstraints];
+    [self.contentView updateConstraintsIfNeeded];
+    [self.contentView setNeedsLayout];
+    [self.contentView layoutIfNeeded];
+}
+
+- (void)updateConstraints {
     _bottomSeparatorLine.hidden = NO;
     _topSeparatorLine.hidden = NO;
     if (_hideTopSeparatorLine
@@ -143,7 +162,7 @@ typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
     }
     self.topSeparatorLineInsets = UIEdgeInsetsZero;
     self.bottomSeparatorLineInsets = UIEdgeInsetsZero;
-    self.topSeparatorLineColor = tableView.separatorColor;//TODO
+    self.topSeparatorLineColor = tableView.separatorColor;
     self.bottomSeparatorLineColor = tableView.separatorColor;
     self.topSeparatorLineHeight = defaultHeight;
     self.bottomSeparatorLineHeight = defaultHeight;

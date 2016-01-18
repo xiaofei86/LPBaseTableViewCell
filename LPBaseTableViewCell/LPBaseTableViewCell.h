@@ -10,6 +10,11 @@
 
 @interface LPBaseTableViewCell : UITableViewCell
 
+- (void)setupViews;
+- (void)setupConstraints;
+- (void)redraw;
++ (NSString *)cellReuseIdentifier;
+
 - (void)tableView:(UITableView *)tableView separatorLineForCellAtIndexPath:(NSIndexPath *)indexPath;
 
 @property (nonatomic, assign) UIColor *topSeparatorLineColor;
