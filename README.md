@@ -33,10 +33,8 @@ _tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
 ```objective-c
 @property (nonatomic, assign) UIColor *topSeparatorLineColor;
 @property (nonatomic, assign) UIColor *bottomSeparatorLineColor;
-
 @property (nonatomic, assign) CGFloat topSeparatorLineHeight;
 @property (nonatomic, assign) CGFloat bottomSeparatorLineHeight;
-
 @property (nonatomic, assign) UIEdgeInsets topSeparatorLineInsets;
 @property (nonatomic, assign) UIEdgeInsets bottomSeparatorLineInsets;
 ```
