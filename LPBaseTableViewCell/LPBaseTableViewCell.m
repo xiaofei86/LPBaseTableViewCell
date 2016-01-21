@@ -12,11 +12,11 @@
 static const CGFloat defaultHeight = 0.5;
 
 typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
+    SeparatorLineStyleNone,
     SeparatorLineStyleOnly,
     SeparatorLineStyleTop,
     SeparatorLineStyleCenter,
-    SeparatorLineStyleBottom,
-    SeparatorLineStyleNone
+    SeparatorLineStyleBottom
 };
 
 @interface LPBaseTableViewCell ()
@@ -37,15 +37,15 @@ typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
     if (self) {
         [self setupViews];
         [self setupConstraints];
-        _separatorLineStyle = SeparatorLineStyleNone;
+        //_separatorLineStyle = SeparatorLineStyleNone;
         _topSeparatorLineHeight = defaultHeight;
         _bottomSeparatorLineHeight = defaultHeight;
-        _topSeparatorLineColor = [UIColor groupTableViewBackgroundColor];
-        _bottomSeparatorLineColor = [UIColor groupTableViewBackgroundColor];
-        _topSeparatorLineInsets = UIEdgeInsetsZero;
-        _topSeparatorLineInsets = UIEdgeInsetsZero;
-        _hideTopSeparatorLine = NO;
-        _hideBottomSeparatorLine = NO;
+        _topSeparatorLineColor = [UIColor colorWithRed:0.78 green:0.78 blue:0.8 alpha:1.0];
+        _bottomSeparatorLineColor = [UIColor colorWithRed:0.78 green:0.78 blue:0.8 alpha:1.0];
+        //_topSeparatorLineInsets = UIEdgeInsetsZero;
+        //_topSeparatorLineInsets = UIEdgeInsetsZero;
+        //_hideTopSeparatorLine = NO;
+        //_hideBottomSeparatorLine = NO;
         
         _topSeparatorLine = [[UIImageView alloc] initWithFrame:CGRectZero];
         _topSeparatorLine.image = [LPBaseTableViewCell imageWithColor:_topSeparatorLineColor];
@@ -71,7 +71,12 @@ typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
     return NSStringFromClass([self class]);
 }
 
-- (void)redraw {
+- (void)redrawing {
+    [self refreshConstraints];
+    [self setNeedsDisplay];
+}
+
+- (void)refreshConstraints {
     [self.contentView setNeedsUpdateConstraints];
     [self.contentView updateConstraintsIfNeeded];
     [self.contentView setNeedsLayout];
@@ -157,9 +162,12 @@ typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
 #pragma mark - Public
 
 - (void)tableView:(UITableView *)tableView separatorLineForCellAtIndexPath:(NSIndexPath *)indexPath {
-    if (tableView.separatorStyle != UITableViewCellSeparatorStyleNone) {
-        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    }
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (tableView.separatorStyle != UITableViewCellSeparatorStyleNone) {
+            tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        }
+    });
     self.topSeparatorLineInsets = UIEdgeInsetsZero;
     self.bottomSeparatorLineInsets = UIEdgeInsetsZero;
     self.topSeparatorLineColor = tableView.separatorColor;
