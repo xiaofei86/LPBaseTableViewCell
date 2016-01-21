@@ -7,7 +7,6 @@
 //
 
 #import "LPBaseTableViewCell.h"
-#import <Masonry.h>
 
 static const CGFloat defaultHeight = 0.5;
 
@@ -77,13 +76,14 @@ typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
 }
 
 - (void)refreshConstraints {
-    [self.contentView setNeedsUpdateConstraints];
-    [self.contentView updateConstraintsIfNeeded];
-    [self.contentView setNeedsLayout];
-    [self.contentView layoutIfNeeded];
+    [self setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
-- (void)updateConstraints {
+- (void)layoutSubviews {
+    [super layoutSubviews];
     _bottomSeparatorLine.hidden = NO;
     _topSeparatorLine.hidden = NO;
     if (_hideTopSeparatorLine
@@ -96,27 +96,15 @@ typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
         _bottomSeparatorLine.hidden = YES;
     }
     
-    [_topSeparatorLine mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self);
-        make.left.equalTo(self).offset(_topSeparatorLineInsets.left);
-        make.right.equalTo(self).offset(-_topSeparatorLineInsets.right);
-        make.height.mas_equalTo(_topSeparatorLineHeight);
-    }];
-    
-    [_bottomSeparatorLine mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self);
-        make.left.equalTo(self).offset(_bottomSeparatorLineInsets.left);
-        make.right.equalTo(self).offset(-_bottomSeparatorLineInsets.right);
-        make.height.mas_equalTo(_bottomSeparatorLineHeight);
-    }];
-    [super updateConstraints];
+    _topSeparatorLine.frame = CGRectMake(_topSeparatorLineInsets.left, 0, CGRectGetWidth(self.frame) - _topSeparatorLineInsets.left - _topSeparatorLineInsets.right, _topSeparatorLineHeight);
+    _bottomSeparatorLine.frame = CGRectMake(_bottomSeparatorLineInsets.left, CGRectGetHeight(self.frame) - _bottomSeparatorLineHeight, CGRectGetWidth(self.frame) - _bottomSeparatorLineInsets.left - _bottomSeparatorLineInsets.right, _bottomSeparatorLineHeight);
 }
 
 #pragma mark - Accessor
 
 - (void)setSeparatorLineStyle:(NSInteger)separatorLineStyle {
     _separatorLineStyle = separatorLineStyle;
-    [self setNeedsUpdateConstraints];
+    [self setNeedsLayout];
 }
 
 - (void)setTopSeparatorLineColor:(UIColor *)topSeparatorLineColor {
@@ -131,22 +119,22 @@ typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
 
 - (void)setTopSeparatorLineHeight:(CGFloat)topSeparatorLineHeight {
     _topSeparatorLineHeight = topSeparatorLineHeight;
-    [self setNeedsUpdateConstraints];
+    [self setNeedsLayout];
 }
 
 - (void)setBottomSeparatorLineHeight:(CGFloat)bottomSeparatorLineHeight {
     _bottomSeparatorLineHeight = bottomSeparatorLineHeight;
-    [self setNeedsUpdateConstraints];
+    [self setNeedsLayout];
 }
 
 - (void)setTopSeparatorLineInsets:(UIEdgeInsets)topSeparatorLineInsets {
     _topSeparatorLineInsets = topSeparatorLineInsets;
-    [self setNeedsUpdateConstraints];
+    [self setNeedsLayout];
 }
 
 - (void)setBottomSeparatorLineInsets:(UIEdgeInsets)bottomSeparatorLineInsets {
     _bottomSeparatorLineInsets = bottomSeparatorLineInsets;
-    [self setNeedsUpdateConstraints];
+    [self setNeedsLayout];
 }
 
 - (void)setHideTopSeparatorLine:(BOOL)hideTopSeparatorLine {

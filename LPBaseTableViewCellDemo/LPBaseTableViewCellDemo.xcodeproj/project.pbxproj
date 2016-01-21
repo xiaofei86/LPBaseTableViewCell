@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4340EF709CA0CAE4A1D284F5 /* libPods-LPBaseTableViewCellDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 764825247E5F71CB65132031 /* libPods-LPBaseTableViewCellDemo.a */; };
+		69DF84A7835105F74326F886 /* libPods-LPBaseTableViewCellDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9776D45AA728395C5D8D92 /* libPods-LPBaseTableViewCellDemo.a */; };
 		AFC2AF4A1C337FF000908728 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC2AF491C337FF000908728 /* main.m */; };
 		AFC2AF4D1C337FF000908728 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC2AF4C1C337FF000908728 /* AppDelegate.m */; };
 		AFC2AF501C337FF000908728 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC2AF4F1C337FF000908728 /* ViewController.m */; };
@@ -16,7 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		764825247E5F71CB65132031 /* libPods-LPBaseTableViewCellDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LPBaseTableViewCellDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C9776D45AA728395C5D8D92 /* libPods-LPBaseTableViewCellDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LPBaseTableViewCellDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BCB6D86CD6A5EBCA72420F6 /* Pods-LPBaseTableViewCellDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPBaseTableViewCellDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LPBaseTableViewCellDemo/Pods-LPBaseTableViewCellDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		AFC2AF451C337FF000908728 /* LPBaseTableViewCellDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPBaseTableViewCellDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC2AF491C337FF000908728 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AFC2AF4B1C337FF000908728 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -27,8 +28,7 @@
 		AFC2AF591C337FF000908728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFC2AF601C33818D00908728 /* LPBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPBaseTableViewCell.h; sourceTree = "<group>"; };
 		AFC2AF611C33818D00908728 /* LPBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPBaseTableViewCell.m; sourceTree = "<group>"; };
-		B73D38FBD09D5CA4FF848E4B /* Pods-LPBaseTableViewCellDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPBaseTableViewCellDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LPBaseTableViewCellDemo/Pods-LPBaseTableViewCellDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		C50978378FB29E53D6D8004C /* Pods-LPBaseTableViewCellDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPBaseTableViewCellDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LPBaseTableViewCellDemo/Pods-LPBaseTableViewCellDemo.release.xcconfig"; sourceTree = "<group>"; };
+		F1005FED82ED3E305AD0DE9D /* Pods-LPBaseTableViewCellDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPBaseTableViewCellDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LPBaseTableViewCellDemo/Pods-LPBaseTableViewCellDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,26 +36,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4340EF709CA0CAE4A1D284F5 /* libPods-LPBaseTableViewCellDemo.a in Frameworks */,
+				69DF84A7835105F74326F886 /* libPods-LPBaseTableViewCellDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		646CF8A1916BEED628274AF5 /* Pods */ = {
+		02F3F8D3241932904902CE94 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B73D38FBD09D5CA4FF848E4B /* Pods-LPBaseTableViewCellDemo.debug.xcconfig */,
-				C50978378FB29E53D6D8004C /* Pods-LPBaseTableViewCellDemo.release.xcconfig */,
+				3BCB6D86CD6A5EBCA72420F6 /* Pods-LPBaseTableViewCellDemo.debug.xcconfig */,
+				F1005FED82ED3E305AD0DE9D /* Pods-LPBaseTableViewCellDemo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		7AB7BC81B57A95C205BF02E2 /* Frameworks */ = {
+		9D8B711D326854E35F78CDEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				764825247E5F71CB65132031 /* libPods-LPBaseTableViewCellDemo.a */,
+				0C9776D45AA728395C5D8D92 /* libPods-LPBaseTableViewCellDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -66,8 +66,8 @@
 				AFC2AF5F1C33818D00908728 /* LPBaseTableViewCell */,
 				AFC2AF471C337FF000908728 /* LPBaseTableViewCellDemo */,
 				AFC2AF461C337FF000908728 /* Products */,
-				646CF8A1916BEED628274AF5 /* Pods */,
-				7AB7BC81B57A95C205BF02E2 /* Frameworks */,
+				02F3F8D3241932904902CE94 /* Pods */,
+				9D8B711D326854E35F78CDEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -307,7 +307,7 @@
 		};
 		AFC2AF5D1C337FF000908728 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B73D38FBD09D5CA4FF848E4B /* Pods-LPBaseTableViewCellDemo.debug.xcconfig */;
+			baseConfigurationReference = 3BCB6D86CD6A5EBCA72420F6 /* Pods-LPBaseTableViewCellDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -322,7 +322,7 @@
 		};
 		AFC2AF5E1C337FF000908728 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C50978378FB29E53D6D8004C /* Pods-LPBaseTableViewCellDemo.release.xcconfig */;
+			baseConfigurationReference = F1005FED82ED3E305AD0DE9D /* Pods-LPBaseTableViewCellDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
