@@ -8,7 +8,7 @@
 
 #import "LPBaseTableViewCell.h"
 
-static const CGFloat defaultHeight = 0.5;
+static CGFloat _defaultHeight;
 
 typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
     SeparatorLineStyleNone,
@@ -29,6 +29,10 @@ typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
     UIImageView *_topSeparatorLine;
 }
 
++ (void)initialize {
+    _defaultHeight = 1 / [UIScreen mainScreen].scale;
+}
+
 #pragma mark - UITableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -36,21 +40,18 @@ typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
     if (self) {
         [self setupViews];
         [self setupConstraints];
-        //_separatorLineStyle = SeparatorLineStyleNone;
-        _topSeparatorLineHeight = defaultHeight;
-        _bottomSeparatorLineHeight = defaultHeight;
+        _topSeparatorLineHeight = _defaultHeight;
+        _bottomSeparatorLineHeight = _defaultHeight;
         _topSeparatorLineColor = [UIColor colorWithRed:0.78 green:0.78 blue:0.8 alpha:1.0];
         _bottomSeparatorLineColor = [UIColor colorWithRed:0.78 green:0.78 blue:0.8 alpha:1.0];
-        //_topSeparatorLineInsets = UIEdgeInsetsZero;
-        //_topSeparatorLineInsets = UIEdgeInsetsZero;
-        //_hideTopSeparatorLine = NO;
-        //_hideBottomSeparatorLine = NO;
         
         _topSeparatorLine = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _topSeparatorLine.backgroundColor = [UIColor whiteColor];
         _topSeparatorLine.image = [LPBaseTableViewCell imageWithColor:_topSeparatorLineColor];
         [self addSubview:_topSeparatorLine];
         
         _bottomSeparatorLine = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _bottomSeparatorLine.backgroundColor = [UIColor whiteColor];
         _bottomSeparatorLine.image = [LPBaseTableViewCell imageWithColor:_bottomSeparatorLineColor];
         [self addSubview:_bottomSeparatorLine];
     }
@@ -58,8 +59,8 @@ typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
 }
 
 - (void)setupViews {
+    self.backgroundColor = [UIColor whiteColor];
     self.contentView.backgroundColor = [UIColor whiteColor];
-    self.opaque = YES;
 }
 
 - (void)setupConstraints {
@@ -160,8 +161,8 @@ typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
     self.bottomSeparatorLineInsets = UIEdgeInsetsZero;
     self.topSeparatorLineColor = tableView.separatorColor;
     self.bottomSeparatorLineColor = tableView.separatorColor;
-    self.topSeparatorLineHeight = defaultHeight;
-    self.bottomSeparatorLineHeight = defaultHeight;
+    self.topSeparatorLineHeight = _defaultHeight;
+    self.bottomSeparatorLineHeight = _defaultHeight;
     self.hideTopSeparatorLine = NO;
     self.hideBottomSeparatorLine = NO;
     if ([tableView numberOfRowsInSection:indexPath.section] == 0) {
@@ -185,7 +186,7 @@ typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
 
 + (UIImage *)imageWithColor:(UIColor *)color {
     CGRect rect = CGRectMake(0, 0, 1, 1);
-    UIGraphicsBeginImageContext(rect.size);
+    UIGraphicsBeginImageContextWithOptions(rect.size, YES, [UIScreen mainScreen].scale);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [color CGColor]);
     CGContextFillRect(context, rect);
