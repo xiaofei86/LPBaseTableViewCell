@@ -12,11 +12,6 @@
 
 + (NSString *)cellReuseIdentifier;
 
-- (void)setupViews;
-- (void)setupConstraints;
-- (void)refreshConstraints;
-- (void)redrawing;
-
 - (void)tableView:(UITableView *)tableView separatorLineForCellAtIndexPath:(NSIndexPath *)indexPath;
 
 @property (nonatomic, strong) UIColor *topSeparatorLineColor;

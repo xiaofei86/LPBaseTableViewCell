@@ -38,8 +38,9 @@ typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self setupViews];
-        [self setupConstraints];
+        self.backgroundColor = [UIColor whiteColor];
+        self.contentView.backgroundColor = [UIColor whiteColor];
+        
         _topSeparatorLineHeight = _defaultHeight;
         _bottomSeparatorLineHeight = _defaultHeight;
         _topSeparatorLineColor = [UIColor colorWithRed:0.78 green:0.78 blue:0.8 alpha:1.0];
@@ -58,29 +59,8 @@ typedef NS_ENUM (NSInteger, SeparatorLineStyle) {
     return self;
 }
 
-- (void)setupViews {
-    self.backgroundColor = [UIColor whiteColor];
-    self.contentView.backgroundColor = [UIColor whiteColor];
-}
-
-- (void)setupConstraints {
-    
-}
-
 + (NSString *)cellReuseIdentifier {
     return NSStringFromClass([self class]);
-}
-
-- (void)redrawing {
-    [self refreshConstraints];
-    [self setNeedsDisplay];
-}
-
-- (void)refreshConstraints {
-    [self setNeedsUpdateConstraints];
-    [self updateConstraintsIfNeeded];
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
 }
 
 - (void)layoutSubviews {

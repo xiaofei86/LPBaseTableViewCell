@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		69DF84A7835105F74326F886 /* libPods-LPBaseTableViewCellDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9776D45AA728395C5D8D92 /* libPods-LPBaseTableViewCellDemo.a */; };
 		AFC2AF4A1C337FF000908728 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC2AF491C337FF000908728 /* main.m */; };
 		AFC2AF4D1C337FF000908728 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC2AF4C1C337FF000908728 /* AppDelegate.m */; };
 		AFC2AF501C337FF000908728 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC2AF4F1C337FF000908728 /* ViewController.m */; };
@@ -16,8 +15,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C9776D45AA728395C5D8D92 /* libPods-LPBaseTableViewCellDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LPBaseTableViewCellDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BCB6D86CD6A5EBCA72420F6 /* Pods-LPBaseTableViewCellDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPBaseTableViewCellDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LPBaseTableViewCellDemo/Pods-LPBaseTableViewCellDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		AFC2AF451C337FF000908728 /* LPBaseTableViewCellDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPBaseTableViewCellDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC2AF491C337FF000908728 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AFC2AF4B1C337FF000908728 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -28,7 +25,6 @@
 		AFC2AF591C337FF000908728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFC2AF601C33818D00908728 /* LPBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPBaseTableViewCell.h; sourceTree = "<group>"; };
 		AFC2AF611C33818D00908728 /* LPBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPBaseTableViewCell.m; sourceTree = "<group>"; };
-		F1005FED82ED3E305AD0DE9D /* Pods-LPBaseTableViewCellDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPBaseTableViewCellDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LPBaseTableViewCellDemo/Pods-LPBaseTableViewCellDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,38 +32,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69DF84A7835105F74326F886 /* libPods-LPBaseTableViewCellDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02F3F8D3241932904902CE94 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3BCB6D86CD6A5EBCA72420F6 /* Pods-LPBaseTableViewCellDemo.debug.xcconfig */,
-				F1005FED82ED3E305AD0DE9D /* Pods-LPBaseTableViewCellDemo.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		9D8B711D326854E35F78CDEC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0C9776D45AA728395C5D8D92 /* libPods-LPBaseTableViewCellDemo.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		AFC2AF3C1C337FF000908728 = {
 			isa = PBXGroup;
 			children = (
 				AFC2AF5F1C33818D00908728 /* LPBaseTableViewCell */,
 				AFC2AF471C337FF000908728 /* LPBaseTableViewCellDemo */,
 				AFC2AF461C337FF000908728 /* Products */,
-				02F3F8D3241932904902CE94 /* Pods */,
-				9D8B711D326854E35F78CDEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,11 +94,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFC2AF5C1C337FF000908728 /* Build configuration list for PBXNativeTarget "LPBaseTableViewCellDemo" */;
 			buildPhases = (
-				DF9E843D25C372DE909FA71A /* Check Pods Manifest.lock */,
 				AFC2AF411C337FF000908728 /* Sources */,
 				AFC2AF421C337FF000908728 /* Frameworks */,
 				AFC2AF431C337FF000908728 /* Resources */,
-				80F982C72398EFDB97869DA7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,39 +150,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		80F982C72398EFDB97869DA7 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LPBaseTableViewCellDemo/Pods-LPBaseTableViewCellDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DF9E843D25C372DE909FA71A /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AFC2AF411C337FF000908728 /* Sources */ = {
@@ -307,7 +248,6 @@
 		};
 		AFC2AF5D1C337FF000908728 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BCB6D86CD6A5EBCA72420F6 /* Pods-LPBaseTableViewCellDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -324,7 +264,6 @@
 		};
 		AFC2AF5E1C337FF000908728 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1005FED82ED3E305AD0DE9D /* Pods-LPBaseTableViewCellDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
